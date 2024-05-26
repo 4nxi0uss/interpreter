@@ -108,19 +108,19 @@ if (5 < 10) {
 		{token.EOF, ""},
 	}
 
-	l := New(input)
+	newLexer := New(input)
 
-	for i, tt := range tests {
-		tok := l.NextToken()
+	for i, testToken := range tests {
+		token := newLexer.NextToken()
 
-		if tok.Type != tt.expectedType {
+		if token.Type != testToken.expectedType {
 			t.Fatalf("tests[%d] - tokentype wrong. expected=%q, got=%q",
-				i, tt.expectedType, tok.Type)
+				i, testToken.expectedType, token.Type)
 		}
 
-		if tok.Literal != tt.expectedLiteral {
+		if token.Literal != testToken.expectedLiteral {
 			t.Fatalf("tests[%d] - literal wrong. expected=%q, got=%q",
-				i, tt.expectedLiteral, tok.Literal)
+				i, testToken.expectedLiteral, token.Literal)
 		}
 	}
 }
