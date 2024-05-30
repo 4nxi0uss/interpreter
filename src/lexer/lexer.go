@@ -9,7 +9,8 @@ type Lexer struct {
 	currentChar  byte // current char under examination
 }
 
-func New(input string) *Lexer {
+/* Lexer Constructor */
+func NewLexer(input string) *Lexer {
 	lexer := &Lexer{input: input}
 	lexer.readChar()
 
