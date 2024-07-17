@@ -23,7 +23,7 @@ type Program struct {
 type LetStatement struct {
 	Token token.Token
 	Name  *Identifier
-	Valeu Expression
+	Value Expression
 }
 
 type Identifier struct {
